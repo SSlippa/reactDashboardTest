@@ -1,0 +1,18 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    border: 1px solid #edeef0;
+    height: 60px;
+}
+
+.circle {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.user-avatar {
+    margin-left: auto;
+    padding: 0 15px;
+}

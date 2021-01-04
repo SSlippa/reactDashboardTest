@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useState } from 'react';
+import './App.css'
+import SideBar from "./components/side-bar/side-bar";
+import SiteHeader from "./components/header/site-header";
+import Dashboard from "./components/dashboard/dashboard";
+import Login from "./components/login/login";
 
-function App() {
+const App: FC = () => {
+    const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
+
+    function setLoginState(state: boolean) {
+        setLoggedIn(state);
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='App'>
+
+        <SideBar />
+        <main className='main'>
+            <SiteHeader isLoggedIn={isLoggedIn} logoutHandler={setLoggedIn} />
+            {isLoggedIn ? <Dashboard /> : <Login loginHandler={setLoginState} /> }
+        </main>
+      </div>
   );
-}
+};
 
 export default App;

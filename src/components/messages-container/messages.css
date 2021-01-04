@@ -1,0 +1,34 @@
+.messages-list {
+    overflow-y: auto;
+}
+
+
+.message-item {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+.message-item .icon {
+    border-radius: 50%;
+    background: #5180ff;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.message-item .data {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.message-item .data .email {
+    font-weight: bold;
+}
+
